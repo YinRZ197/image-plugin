@@ -1,0 +1,122 @@
+/* ========================================
+   图提取 ImageGrab — 官网样式
+   纯静态、响应式、CSS 变量统一管理
+   ======================================== */
+:root {
+  /* 主色：改这里即可换肤 */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-soft: #dbeafe;
+  --accent: #0ea5e9;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --bg: #f7f9fc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 14px 32px rgba(37, 99, 235, 0.16);
+  --header-h: 68px;
+  --container: 1100px;
+  --ease: 0.25s ease;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+}
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  padding: 0.15em 0.45em;
+  border-radius: 6px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+/* ---------- 导航 ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: rgba(247, 249, 252, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow var(--ease), border-color var(--ease), background var(--ease);
+}
+.site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom-color: var(--border);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+.navbar {
+  height: var(--header-h);
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-shrink: 0;
+}
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.brand-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.brand-en {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem 1.25rem;
+}
+.nav-link {
+  font-size: 0.95rem;
